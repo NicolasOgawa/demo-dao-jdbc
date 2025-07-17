@@ -5,7 +5,7 @@ import model.dao.DepartmentDao;
 import model.entities.Department;
 import model.entities.Seller;
 
-import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Program2 {
@@ -37,6 +37,12 @@ public class Program2 {
 		int id = sc.nextInt();
 		departmentDao.deleteById(id);
 		System.out.println("Delete completed");
+
+		System.out.println("\n==== TEST 3: seller findAll ====");
+		List<Department> list = departmentDao.findAll();
+		for (Department obj : list) {
+			System.out.println(obj);
+		}
 
 	}
 }
